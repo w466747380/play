@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+
+	#wamp{
+		width: 1000px;
+		height: 800px;
+		border: 5px solid #0cc;
+		background: rgba(0,0,0,0.8);
+		margin: 0 auto;
+		position: relative;
+	}
+
+	#begin{
+		width: 100px;
+		height: 50px;
+		background: red;
+		cursor: pointer;
+		color: #fff;
+		font-size: 18px;
+		font-weight: bold;
+		text-align: center;
+		line-height: 50px;
+		position: absolute;
+		top: 700px;
+		left: 450px;
+
+	}
+
+	#toys{
+		width: 260px;
+		height: 260px;
+		border-radius: 10px;
+
+		position: absolute;
+		left: 380px;
+		top: 300px;
+		transition:all 0.8s ease-in-out;
+			transform-style:preserve-3d;
+			backface-visibility:hidden;
+			transform:rotateY(180deg);
+	}
+	#toys.toys{
+		transform:rotateY(0deg);
+	}
+	
+	#toys1{
+		width: 260px;
+		height: 260px;
+		position: absolute;
+		left: 380px;
+		top: 300px;
+			transition:all 0.8s ease-in-out;
+			transform-style:preserve-3d;
+			backface-visibility:hidden;
+			transform:rotateY(180deg);
+	}
+	#toys1.toys1{
+		transform:rotateY(0deg);
+	}
+	#huaji{
+		width: 260px;
+		height: 260px;
+		background: url(timg.gif);
+		background-size: cover;
+		border-radius: 50%;
+		position: absolute;
+		left: 380px;
+		top: 300px;
+		transition:all 0.8s ease-in-out;
+			transform-style:preserve-3d;
+			transform:rotateY(0deg);
+		
+	}
+	#huaji.huaji{
+		transform:rotateY(180deg);
+		backface-visibility:hidden;
+	}
+
+	.toy{
+		width: 40px;
+		height: 40px;
+		background: url(img0.gif);
+		border: 1px solid #fff;
+		float: left;
+		
+	}
+	
+	.toy2{
+		width: 40px;
+		height: 40px;
+		border: 1px solid #fff;
+		border-radius: 10px;
+		float: left;
+	}
+
+	#time1{
+		width: 260px;
+		height: 60px;
+		
+		font-size: 36px;
+		color: #fff;
+		position: absolute;
+		left: 50px;
+		top: 50px;
+	}
+	</style>
+</head>
+<body>
+	<!-- 容器开始 -->
+	<div id="wamp">
+		<!-- 图片开始 -->
+		<div id="toys"></div>
+		<!-- 遮挡图片开始 -->
+		<div id="toys1"></div>
+		<!-- 滑稽勇士开始 -->
+		<div id="huaji"></div>
+		<div id="begin">开始游戏</div>
+		<div id="time1"></div>
+	</div>
+
+	<script type="text/javascript">
+		
+	window.onload = function() {
+		//获取容器对象
+		var toys = document.getElementById('toys');
+		var toys1 = document.getElementById('toys1');
+		var huaji = document.getElementById('huaji');
+		var time1 = document.getElementById('time1');
+ 		//获取开始按钮
+		var begin = document.getElementById('begin');
+		
+        var timeInt;
+		// 开始游戏点击函数
+		begin.onclick = function() {
+
+			//正则判断删除
+			var r = /(<div\sclass\=\"toy2\")(.*?)(><\/div>)/g;
+			//删除所有toy2
+			toys.innerHTML = toys.innerHTML.replace(r, '');
+
+			//正则判断删除
+			var r = /(<div\sclass\=\"toy\")(.*?)(><\/div>)/g;
+			//删除所有toy2
+			toys1.innerHTML = toys1.innerHTML.replace(r, '');
+			//滑稽勇士的旋转
+			huaji.className = 'huaji';
+			// toys旋转
+			toys.className = 'toys';
+			//toys1旋转
+			toys1.className = 'toys1';
+			
+            clearInterval(timeInt);
+			
+            
+			var k = 120;
+			function m0(){
+
+				if (k > 0){
+					time1.innerHTML = '倒计时：' + k;
+					k--;
+				}else{
+					clearInterval(timeInt);
+					alert('时间到！下次加油吧！')
+					window.location.reload();
+				}
+			}
+			timeInt = setInterval(m0,1000);
+
+			// for (var i = 1; i < 7; i++) {
+
+			// 	//随机数1-6
+			// 	var sam = Math.floor(6 * Math.random() + 1);
+				
+			// 	//动态添加toy2
+			// 	var div = document.createElement('div');
+
+			// 	div.className = 'toy2';
+
+			// 	div.style.background = 'url(img' + sam + '.gif)';
+
+			// 	toys.appendChild(div);
+			// 	//动态添加灰块
+			// 	var divBlack = document.createElement('div');
+
+			// 	divBlack.className = 'toy';
+
+			// 	divBlack.style.background = 'url(img0.gif)';
+
+			// 	divBlack.setAttribute('icss', sam);
+
+			// 	toys1.appendChild(divBlack);
+			var arr = [];
+
+			var brr = [];
+
+			var flag = -1;
+			
+			for(var j = 0;j < 18;j ++){
+
+				arr[j] = j + 1;
+				brr[j] = j + 1;
+
+			}
+
+			arr.sort(function(){
+				 return 0.5 - Math.random();
+			});
+			
+			brr.sort(function(){
+				 return 0.5 - Math.random();
+			});
+			for(var i = 0;i < 18;i ++){
+				var div = document.createElement('div');
+
+				div.className = 'toy2';
+
+				div.style.background = 'url(img' + arr[i] + '.gif)';
+
+				toys.appendChild(div);
+				//动态添加灰块
+				var divBlack = document.createElement('div');
+
+				divBlack.className = 'toy';
+
+				divBlack.style.background = 'url(img0.gif)';
+
+				divBlack.setAttribute('icss', arr[i]);
+
+				toys1.appendChild(divBlack);
+
+				var div1 = document.createElement('div');
+
+				div1.className = 'toy2';
+
+				div1.style.background = 'url(img' + brr[i] + '.gif)';
+
+				toys.appendChild(div1);
+				//动态添加灰块
+				var div1Black = document.createElement('div');
+
+				div1Black.className = 'toy';
+
+				div1Black.style.background = 'url(img0.gif)';
+
+				div1Black.setAttribute('icss', brr[i]);
+
+				toys1.appendChild(div1Black);
+			}
+
+			
+
+		}
+		//事件委托
+		var flag = 0;
+
+		var obj;
+
+		var times = 1;
+
+		var l = 0;
+
+		toys1.onclick = function(e) {
+
+			e = e || window.event;
+			
+			var curObj = e.terget || e.srcElement;
+			console.log(curObj.className);
+			if(curObj.className == 'toy'){
+
+				curObj.style.visibility = 'hidden';
+
+
+
+				if(times % 2 != 0){//第一次点击
+					//延迟传参，，不然有bug
+					setTimeout(function(){
+						obj = curObj;
+					},400);
+					
+				}else{//第二次点击
+
+					if(curObj.getAttribute('icss') == flag){
+						
+						l ++;
+					}else{
+						// 隐藏本身对象和上一个对象
+						setTimeout(function(){
+							curObj.style.visibility = '';
+							obj.style.visibility = '';
+						},400);
+						
+					}
+
+				}
+				if(l == 18){
+					alert('恭喜你赢了！');
+
+					window.location.reload();
+				}	
+
+				flag = curObj.getAttribute('icss');	
+				times ++;
+			}
+		}
+
+
+
+}
+	</script>
+</body>
+</html>
