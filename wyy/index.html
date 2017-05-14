@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>盗版云音乐</title>
+	<link rel="stylesheet" href="css/index.css">
+	<script>
+			/*动态计算html的基准字号*/
+			var designWidth = 480; //设计稿的尺寸
+			var remToPx = 100; // rem和像素的转换比
+			document.documentElement.style.fontSize = (window.innerWidth / designWidth) * remToPx + 'px';
+			
+			window.onresize = function() {
+				document.documentElement.style.fontSize = (window.innerWidth / designWidth) * remToPx + 'px';
+			}
+	</script>
+</head>
+<body>
+	<!-- 最外层容器开始 -->
+	<div id="wrapper">
+		<!-- bg背景图开始 -->
+		<div class="bg"></div>
+		<div class="bg-black"></div>
+		<!-- bg背景图结束 -->
+		<!-- header 顶部歌曲名开始 -->
+		<div class="header">
+			<div class="song">本网站基于html5开发</div>
+			<div class="artist">本地浏览请使用火狐浏览器</div>
+		</div>
+		<!-- header 顶部歌曲名结束 -->
+		<!-- center 内容开始 -->
+		<div class="center">
+			<img class="play-needle" src="images/play_needle.png" alt="">
+			<div class="disk-bg"></div>
+			<div class="disk">
+				<div class="disk-albun-bg"></div>
+				<img src="images/play_disc.png" alt="" class="disk-music-bg">
+			</div>
+		</div>
+		<!-- center 内容结束 -->
+		<!-- 歌词开始 -->
+		<div class="lyric" style="display:none;">
+			<!-- <div id="line"></div> -->
+			<ul>
+				
+			</ul>
+		</div>
+		<!-- 歌词结束 -->
+		<!-- footer 底部开始 -->
+		<div class="footer">
+			<!-- process 进度条部分开始 -->
+			<div id="process">
+				<!-- current-time 当前时间 -->
+				<span id="current-time">00:00</span>
+				<!-- process-bar 进度条 -->
+				<div id="process-bar">
+					<div id="process-all"></div>
+					<div id="process-ready"></div>
+					<div id="process-cur">
+						<span id="cur-btn" style="left: 0px;"></span>
+					</div>
+				</div>
+				<!-- process-bar 进度条结束 -->
+				<!-- total-time 总时间 -->
+				<span id="total-time">00:00</span>
+			</div>
+			<!-- process 进度条部分结束 -->
+			<!-- 播放控制菜单开始 -->
+			<div id="control">
+				<!-- loop循环按钮 -->
+				<span class="loop"></span>
+				<!-- pre上一曲按钮 -->
+				<span class="pre"></span>
+				<!-- play播放按钮 -->
+				<span class="play"></span>
+				<!-- pause暂停按钮 -->
+				<span class="pause" style="display: none;"></span>
+				<!-- next 下一曲按钮 -->
+				<span class="next"></span>
+				<!-- list列表按钮 -->
+				<span class="list"></span>
+			</div>
+			<!-- 播放控制菜单结束 -->	
+		</div>
+		<!-- footer 底部结束 -->
+		<!-- ？ -->
+		<div id="list-mask"></div>
+		<!-- 播放列表开始 -->
+		<div id="play-list">
+			<div>
+				<div class="list-title">
+					播放列表(
+					<span id="playListCount">3</span>
+					)
+					<div class="list-title-close">x</div>
+				</div>
+				
+			</div>
+			<ul id="singList">
+				
+			</ul>
+		</div>
+	</div>
+	<!-- 最外层容器结束 -->
+	<div style="display:none;">
+		<audio id="audio1" src=""></audio>
+	</div>
+
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

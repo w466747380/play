@@ -1,0 +1,652 @@
+@charset "utf-8";
+
+*{
+	margin: 0;
+	padding: 0;
+	/*据说iphone和ipad点击时会有黑色透明框*/
+	-webkit-tap-highlight-color: transparent;
+}
+
+li {
+	list-style: none;	
+}
+
+html,body {
+	height: 100%;
+	font-family: Arial,Helvetica,Microsoft Yahei;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-o-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+body {
+	font-size: 12px;	
+}
+
+/*外层容器*/
+#wrapper {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+/*背景*/
+#wrapper .bg {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(../images/timg.jpg) no-repeat;
+	background-size: cover;
+	background-position: 0 50%;
+	/*模糊*/
+	filter:blur(18px);
+	-webkit-filter:blur(18px);
+	-moz-filter:blur(18px);
+	-ms-filter:blur(18px);
+	-o-filter:blur(18px);
+}
+/*背景黑色遮挡*/
+#wrapper .bg-black {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #111111;
+	opacity: 0.3;
+}
+/*header顶部*/
+.header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+}
+
+.header .song,.artist {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 7px;
+	font-family: 'Microsoft Yahei';
+	font-size: 18px;
+	/*position: absolute;
+	top: 0;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);*/
+}
+
+.header .artist {
+	font-size: 13px;
+	color: #fff;
+	top:22px
+}
+
+/*center内容*/
+.center {
+	position: absolute;
+	top: 60px;
+	width: 100%;
+	height: 310px;
+	overflow: hidden;
+}
+
+.center .play-needle {
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	width: 85px;
+	margin-left: -8px;
+	z-index: 999;
+	transition:all 0.4s;
+	-webkit-transition:all 0.4s;
+	-moz-transition:all 0.4s;
+	-ms-transition:all 0.4s;
+	transform-origin: 16px 16px;
+	-webkit-transform-origin: 16px 16px;
+	-moz-transform-origin: 16px 16px;
+	-ms-transform-origin: 16px 16px;
+	transform: rotate(-25deg);
+	-webkit-transform: rotate(-25deg);
+	-moz-transform: rotate(-25deg);
+	-ms-transform: rotate(-25deg);
+
+}
+
+.center .play-needle.stop {
+	transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+}
+
+.disk-bg {
+	width: 252px;
+	height: 252px;
+	position: absolute;
+	left: 50%;
+	top: 50px;
+	margin: 0 -126px;
+	background: rgba(251,251,251,0.2);
+	border-radius: 126px;
+}
+
+.disk {
+	position: absolute;
+	width: 250px;
+	height: 250px;
+	left: 50%;
+	top: 51px;
+	margin: 0 -125px;
+	animation: rotate-disk 20s infinite normal linear;
+	-webkit-animation: rotate-disk 20s infinite normal linear;
+	animation-play-state: paused;
+	-moz-animation-play-state: paused;
+	-ms-animation-play-state: paused;
+	-webkit-animation-play-state: paused;
+}
+
+.disk.stop {
+	animation-play-state: running;
+	-moz-animation-play-state: running;
+	-ms-animation-play-state: running;
+	-webkit-animation-play-state: running;
+}
+
+@keyframes rotate-disk {
+	to{
+		transform: rotateZ(360deg);
+	}
+}
+@-moz-keyframes rotate-disk{
+	to{
+		transform: rotateZ(360deg);
+	}
+}
+@-webkit-keyframes rotate-disk{
+	to{
+		transform: rotateZ(360deg);
+	}
+}
+@-ms-keyframes rotate-disk{
+	to{
+		transform: rotateZ(360deg);
+	}
+}
+
+.disk-albun-bg {
+	width: 240px;
+	height: 240px;
+	border-radius: 50%;
+	margin: 0px -120px;
+	position: absolute;
+	top: 4px;
+	left: 50%;
+	background: url(../images/喵吧喵帕斯.jpg) no-repeat;
+	background-size: cover;
+}
+
+.disk-music-bg{
+	width: 250px;
+	height: 250px;
+	/*微信浏览器和小米浏览器用absolute有时候会错位换fixed解决问题了不知道为什么*/
+	position: fixed;
+	left: 50%;
+	top: 0; 
+	margin: 0px -125px;
+	border-radius: 50%;
+}
+/*歌词部分*/
+.lyric {
+	position: absolute;
+	top: 60px;
+	width: 100%;
+	height: 390px;
+	overflow: hidden;
+	display: none;
+}
+
+.lyric #line {
+	position: absolute;
+	left: 0;
+	top: 168px;
+	width: 100%;
+	height: 0;
+	border-top: 1px dashed yellow;
+	
+}
+
+.lyric ul {
+	position: absolute;
+	top: 147px;
+	width: 100%;
+	color: #fff;
+	font-family: "Microsoft Yahei";
+	text-align: center;
+}
+
+.lyric ul li {
+	color: #ddd;
+	height: 42px;
+	opacity: 0.7;
+	font-size: 15px;
+	transition: font-size 0.5s,color 1s,opacity 0.5s;
+	-ms-transition: font-size 0.5s,color 1s,opacity 0.5s;
+	-moz-transition: font-size 0.5s,color 1s,opacity 0.5s;
+	-webkit-transition: font-size 0.5s,color 1s,opacity 0.5s;
+	line-height: 42px;
+}
+
+.lyric ul li.active1 {
+	color: red;
+	font-size: 24px;
+	opacity: 1;
+}
+/*footer底部*/
+.footer {
+	position:fixed;
+	bottom: 0;
+	left: 0;
+	height: 120px;
+	width: 100%;
+	overflow: hidden;
+	color: #fff;
+}
+
+#process {
+	margin: 0 auto;
+	text-align: center;
+	line-height: 20px;
+}
+
+#process span {
+	display: inline-block;
+}
+
+#process-bar {
+	position: relative;
+	display: inline-block;
+	width: 240px;
+	height: 20px;
+	vertical-align: top;
+	margin: 0 8px;
+	cursor: pointer;
+}
+
+#process-bar div {
+	margin-top: 9px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 2px;
+}
+
+#process-all {
+	width: 100%;
+	background: #615d5c;
+}
+
+#process-ready {
+	background: #b1adac;
+}
+
+#process-cur {
+	height: 1px;
+	background: red;
+}
+
+#cur-btn {
+	cursor: pointer;
+	position: absolute;
+	top: -9px;
+	left: 0;
+	margin-left: -10px;
+	width: 20px;
+	height: 20px;
+	background: url(../images/process_btn.png)no-repeat;
+	background-size: 20px;
+}
+
+#control {
+	margin: 0 auto;
+	width: 317px;
+	height: 100px;
+	font-size: 0;
+}
+
+#control span {
+	display: inline-block;
+	background-size: cover;
+	margin-right: 15px;
+	cursor: pointer;
+}
+
+.loop {
+	background: url(../images/play_icn_loop.png)no-repeat;
+	background-size: cover;
+	width: 36px;
+	height: 36px;
+}
+
+.pre {
+	background: url(../images/play_btn_prev.png)no-repeat;
+	width: 50px;
+	height: 50px;
+}
+
+.play {
+	background: url(../images/play_rdi_btn_play.png)no-repeat;
+	width: 70px;
+	height: 70px;
+}
+
+.pause {
+	background: url(../images/play_rdi_btn_pause.png)no-repeat;
+	width: 70px;
+	height: 70px;
+}
+
+.next {
+	background: url(../images/play_btn_next.png)no-repeat;
+	width: 50px;
+	height: 50px;
+}
+
+.list {
+	background: url(../images/play_icn_src.png)no-repeat;
+	width: 36px;
+	height: 36px;
+}
+
+#list-mask{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 20;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+/*播放列表*/
+#play-list {
+	width: 100%;
+	height: 360px;
+	position: absolute;
+	z-index: 20;
+	bottom: -360px;
+	overflow: hidden;
+	color: #fff;
+	font-family: "microsoft yahei";
+	background: rgba(27,27,27,0.8);
+}
+
+.list-title-close {
+	font-size: 16px;
+	cursor: pointer;
+	display: block;
+	float: right;
+	margin-right: 24px; 
+	transition: font-size 0.5s,color 1s,transform 0.5s;
+	-ms-transition: font-size 0.5s,color 1s,transform 0.5s;
+	-moz-transition: font-size 0.5s,color 1s,transform 0.5s;
+	-webkit-transition: font-size 0.5s,color 1s,transform 0.5s;
+	transform-origin: center center;
+	-webkit-transform-origin: center center;
+	-moz-transform-origin: center center;
+	-ms-transform-origin: center center;
+}
+
+.list-title-close:hover {
+	font-size: 24px;
+	color: orange;
+	transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+}
+
+.list-title {
+	font-size: 22px;
+	font-weight: bold;
+	margin: 0 auto;
+	width: 100%;
+	height: 65px;
+	line-height: 65px;
+	text-indent: 1em;
+	border-bottom: 1px solid #a29b9b;
+}
+
+#play-list ul{
+    height: 294px;
+    width: 102%;
+    padding: 0 4% 0 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#play-list ul li{
+	width: 101%;
+	height: 41px;
+	border-bottom: #A29B9B solid 1px;
+	font-size: 16px;
+	line-height: 40px;
+	text-indent: 1em;
+	cursor: pointer;
+}
+
+#play-list ul li span{
+	color: #82A2B2;
+}
+
+#play-list ul li.active{
+	background: url(../images/song_play_icon.png) no-repeat;
+	background-position: 1em 50%;
+	text-indent: 3em;
+}
+
+/*移动端适配*/
+@media only screen and (max-width: 768px) {
+	
+
+/*背景*/
+#wrapper .bg {
+	/*模糊*/
+	filter:blur(0.18rem);
+	-webkit-filter:blur(0.18rem);
+	-moz-filter:blur(0.18rem);
+	-ms-filter:blur(0.18rem);
+	-o-filter:blur(0.18rem);
+}
+
+/*header顶部*/
+.header{
+	height: 0.6rem;
+}
+
+.header .song,.artist {
+	margin-top: 0.07rem;
+	font-size: 0.18rem;
+}
+
+.header .artist {
+	font-size: 0.13rem;
+	top:0.22rem;
+}
+
+/*center内容*/
+.center {
+	top: 0.6rem;
+	height: 3.1rem;
+}
+
+.center .play-needle {
+	top: -0.2rem;
+	width: 0.85rem;
+	margin-left: -0.08rem;
+	transform-origin: 0.16rem 0.16rem;
+	-webkit-transform-origin: 0.16rem 0.16rem;
+	-moz-transform-origin: 0.16rem 0.16rem;
+	-ms-transform-origin: 0.16rem 0.16rem;
+}
+
+.disk-bg {
+	width: 2.52rem;
+	height: 2.52rem;
+	top: 0.5rem;
+	margin: 0 -1.26rem;
+	border-radius: 1.26rem;
+}
+
+.disk {
+	width: 2.50rem;
+	height: 2.50rem;
+	top: 0.51rem;
+	margin: 0 -1.25rem;
+}
+
+.disk-albun-bg {
+	width: 2.4rem;
+	height: 2.4rem;
+	margin: 0 -1.20rem;
+	top: 0.04rem;
+}
+
+.disk-music-bg{
+	width: 2.5rem;
+	height: 2.5rem;
+	margin: 0 -1.25rem;
+}
+/*歌词部分*/
+.lyric {
+	top: 0.6rem;
+	height: 3.9rem;
+}
+
+.lyric #line {
+	top: 1.68rem;
+	border-top: 0.01rem dashed yellow;
+}
+
+.lyric ul {
+	top: 1.47rem;
+}
+
+.lyric ul li {
+	height: 0.42rem;
+	font-size: 0.15rem;
+	line-height: 0.42rem;
+}
+
+.lyric ul li.active1 {
+	font-size: 0.24rem;
+}
+/*footer底部*/
+.footer {
+	height: 1.2rem;
+}
+
+#process {
+	line-height: 0.2rem;
+}
+
+#process-bar {
+	width: 2.4rem;
+	height: 0.2rem;
+	margin: 0 0.08rem;
+}
+
+#process-bar div {
+	margin-top: 0.09rem;
+	height: 0.02rem;
+}
+
+#cur-btn {
+	top: -0.09rem;
+	margin-left: -0.1rem;
+	width: 0.2rem;
+	height: 0.2rem;
+	background-size: 0.2rem;
+}
+
+#control {
+	width: 3.17rem;
+	height: 1rem;
+}
+
+#control span {
+	margin-right: 0.15rem;
+}
+
+.loop {
+	width: 0.36rem;
+	height: 0.36rem;
+}
+
+.pre {
+
+	width: 0.50rem;
+	height: 0.50rem;
+}
+
+.play {
+	width: 0.70rem;
+	height: 0.70rem;
+}
+
+.pause {
+	width: 0.70rem;
+	height: 0.70rem;
+}
+
+.next {
+	width: 0.50rem;
+	height: 0.50rem;
+}
+
+.list {
+	width: 0.36rem;
+	height: 0.36rem;
+}
+
+/*播放列表*/
+#play-list {
+	height: 3.6rem;
+	bottom: -3.6rem;
+}
+
+.list-title-close {
+	font-size: 0.24rem;
+	margin-right: 0.24rem; 
+}
+
+.list-title {
+	font-size: 0.22rem;
+	height: 0.65rem;
+	line-height: 0.65rem;
+	border-bottom:0.01rem solid #a29b9b;
+}
+
+#play-list ul{
+    height: 2.94rem;
+}
+
+#play-list ul li{
+	height: 0.41rem;
+	border-bottom: #A29B9B solid 0.01rem;
+	font-size: 0.16rem;
+	line-height: 0.40rem;
+}
+
+	
+}
