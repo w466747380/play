@@ -1,0 +1,358 @@
+@charset "utf-8";
+
+/*统一设置*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-size: 12px;
+	background: #F4E4C2;
+	
+}
+#fullpage{
+	width: 640px;
+	height:100%;
+}
+.wamp {
+	width: 640px;
+	height: 500%;
+	position: absolute;
+	
+}
+.page1 {
+	width: 640px;
+	height: 20%;
+	position: relative;
+}
+
+.page1 .bird1 {
+	width: 234px;
+	height: 150px;
+	background: url(../images/page1_6.png);
+	position: absolute;
+	right: 0px;
+	top: 20px;
+}
+
+.page1 .circle {
+	width: 423px;
+	height: 426px;
+	background: url(../images/page1_1.png);
+	position: absolute;
+	top: 40px;
+	left: calc(50% - 211.5px);
+}
+
+.page1 .peiban {
+	width: 389px;
+	height: 244px;
+	position: absolute;
+	top: 80px;
+	left: 20px;
+}
+
+.page1 .peiban h1 {
+	text-align: center;
+	color: #6E2D13;
+	font-size: 36px;
+}
+
+.page1 .bird2 {
+	width: 206px;
+	height: 175px;
+	background: url(../images/page1_4.png)no-repeat;
+	position: absolute;
+	top: 370px;
+	left: 0;
+}
+
+.page1 .beizi {
+	width: 584px;
+	height: 221px;
+	background: url(../images/page1_9.png)no-repeat;
+	position: absolute;
+	bottom: 80px;
+	right: 0;
+}
+
+.page1 .mom {
+	width: 47px;
+	height: 272px;
+	background: url(../images/page1_5.png)no-repeat;
+	position: absolute;
+	bottom: 160px;
+	left: 100px;
+}
+
+.page1 .flower1 {
+	width: 145px;
+	height: 354px;
+	background: url(../images/page1_3.png)no-repeat;
+	position: absolute;
+	bottom: 163px;
+	left: 312px;
+}
+
+.page1 .flower2 {
+	width: 145px;
+	height: 354px;
+	background: url(../images/page1_2.png)no-repeat;
+	position: absolute;
+	bottom: 83px;
+	left: 415px;
+}
+
+.page1 .heart {
+	width: 83px;
+	height: 75px;
+	background: url(../images/page1_8.png)no-repeat;
+	position: absolute;
+	bottom: 135px;
+	left: 250px;
+}
+
+.down {
+	width: 45px;
+	height: 25px;
+	background: url(../images/down.png)no-repeat;
+	position: absolute;
+	bottom: 10px;
+	left: calc(50% - 22.5px);
+}
+
+.page5 {
+	width: 640px;
+	height: 20%;
+	position: relative;
+}
+
+.page5 .peiban {
+	width: 389px;
+	height: 244px;
+	background: url(../images/page5_1.png)no-repeat;
+	position: absolute;
+	bottom: 34px;
+	left: 42px;
+}
+
+.page5 .baiban {
+	width: 508px;
+	height: 321px;
+	background: url(../images/page5_8.png)no-repeat;
+	position: absolute;
+	bottom: 500px;
+	left: 70px;
+}
+
+.page5 .flower1 {
+	width: 145px;
+	height: 354px;
+	background: url(../images/page5_2.png)no-repeat;
+	position: absolute;
+	top: 145px;
+	left: 495px;
+}
+
+.page5 .flower2 {
+	width: 145px;
+	height: 354px;
+	background: url(../images/page5_4.png)no-repeat;
+	position: absolute;
+	top: 50px;
+	left: 495px;
+}
+
+.page5 .flower3 {
+	width: 145px;
+	height: 354px;
+	background: url(../images/page5_3.png)no-repeat;
+	position: absolute;
+	top: 97px;
+	left: 445px;
+}
+
+.page5 .road {
+	width: 640px;
+	height: 426px;
+	background: url(../images/page5_10.png)no-repeat;
+	position: absolute;
+	bottom: 80px;
+	left: 0px;
+}
+
+.page5 .renying {
+	width: 240px;
+	height: 366px;
+	background: url(../images/page5_9.png)no-repeat;
+	position: absolute;
+	bottom: 133px;
+	left: 260px;
+}
+
+.page2 {
+	position: relative;
+	width: 640px;
+	height: 20%;
+}
+
+.down-img {
+	width: 45px;
+	height: 25px;
+	position: absolute;
+	bottom: 30px;
+	left: calc(50% - 22.5px);
+}
+
+.page2 .content {
+	/*padding: 98px 0;*/
+}
+
+.page2 .text {
+	width: 531px;
+	height: 64px;
+	margin: 0 auto;
+}
+
+.page3 {
+	position: relative;
+	width: 640px;
+	height: 20%;
+}
+
+.page3 .down-img {
+	width: 45px;
+	height: 25px;
+	position: absolute;
+	bottom: 30px;
+	left: calc(50% - 22.5px);
+}
+
+.page3 .content {
+	position: relative;
+	/*padding: 57px 0 50px;*/
+}
+
+.page3 .content .img2 {
+	position: absolute;
+	left: 90.5px;
+	top: 117px;
+}
+
+.page3 .content .img3 {
+	position: absolute;
+	left: 435px;
+	top: 104px;
+}
+
+.page3 .text {
+	width: 536px;
+	height: 182px;
+	margin: 0 auto;
+}
+
+.page4 {
+	position: relative;
+	width: 640px;
+	height: 20%;
+}
+
+.page4 .down-img {
+	width: 45px;
+	height: 25px;
+	position: absolute;
+	bottom: 30px;
+	left: calc(50% - 22.5px);
+}
+
+.page4 .content {
+	position: relative;
+	/*padding: 20px 0 50px;*/
+	visibility: hidden;
+}
+
+.page4 .content .img1 {
+	position: absolute;
+	top: 40px;
+	left: 25px;
+}
+
+.page4 .content .img2 {
+	position: absolute;
+	left: 181px;
+	top: 287px;
+	z-index: -1;
+}
+
+.page4 .text {
+	width: 447px;
+	height: 221px;
+	margin: 0 auto;
+}
+
+.page4 .content .img3 {
+	position: absolute;
+	left: 0px;
+	top: 42px;
+	z-index: -1;
+}
+
+.page4 .content .img4 {
+	position: absolute;
+	right: 32.5px;
+	top: 23px;
+	z-index: -1;
+}
+.page6 {
+	width: 640px;
+	height: 20%;
+	position: relative;
+}
+
+.page6 .wenzi{
+	width: 640px;
+	height: 350px;
+	position: absolute;
+	top: 100px;
+	left: 0;
+}
+.page6 .wenzi h1 {
+	text-align: center;
+	color: #6E2D13;
+	font-size: 36px;
+}
+
+.page6 .wenzi span {
+	color: red;
+	font-size: 64px;
+}
+
+.page6 .zhongruan {
+	width: 320px;
+	height: 300px;
+	background: url(../images/zhongruan.jpg)no-repeat;
+	background-size: cover;
+	position: absolute;
+	top: 450px;
+	left: 157px;
+}
+
+.page6 .zuozhe {
+	width: 640px;
+	height: 24px;
+	position: absolute;
+	bottom: 30px;
+	left: 0;
+}
+.page6 .zuozhe h1 {
+	font-size: 24px;
+	text-align: center;
+	color: #A0A095;
+}
