@@ -1,0 +1,179 @@
+﻿/*全局reset设置*/
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, img, dl, dt, dd, table, th, td, blockquote, fieldset, div, strong, label, em {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+ul, ol, li {
+	list-style-type: none;
+}
+input, button {
+	margin: 0;
+	font-size: 12px;
+	vertical-align: middle;
+}
+body {
+	font-size: 12px;
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	color: #333;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+	color: #333;
+	text-decoration: none;
+}
+a:hover {
+	color: #c00;
+	text-decoration: underline;
+}
+
+/*网页头部*/
+#header {
+	width: 960px;
+	height: 70px;
+	margin: 0px auto
+}
+
+/*主导航*/
+#nav {
+	height: 50px;
+	line-height: 50px;
+	background: #47a3da
+}
+#nav ul {
+	width: 960px;
+	margin: 0px auto
+}
+#nav ul li {
+	width: 160px;
+	text-align: center;
+	font-weight: 500;
+	color: #fff;
+	float: left;
+	list-style-type: none;
+}
+#nav ul li a {
+	color: #fff;
+	display: block;
+	text-decoration: none;
+	font-size: 18px;
+	letter-spacing: 3px;
+	font-family: "微软雅黑";
+}
+#nav ul li a:hover {
+	background: #e6f2fa;
+	color: #0068b7
+}
+.active {
+	background: #0068b7
+}
+.lanmu {
+	padding: 20px 0px;
+}
+.clear {
+	clear: both;
+}
+
+/*主banner*/
+#banner {
+	height: 250px;
+	background: url(../images/02.jpg) no-repeat
+}
+
+/*主内容区*/
+#main {
+	width: 960px;
+	margin: 0px auto;
+	padding-top: 30px
+}
+
+/*新闻事件,产品方案,人才派遣*/
+#main #news, #main #pro, #main #tal {
+	width: 320px;
+	float: left
+}
+#main #news h3, #main #pro h3, #main #tal h3 {
+	border-left: solid 5px #0068b7;
+	color: #666;
+	text-indent: 10px
+}
+#main #news ul, #main #pro ul, #main #tal ul {
+	width: 90%;
+	margin: 0px auto;
+	list-style-image: url(../images/dot.jpg)
+}
+#main #news li, #main #pro li, #main #tal li {
+	line-height: 20px
+}
+
+/*案例，招聘，公益*/
+#main #anli, #main #zhaopin, #main #gongyi {
+	width: 320px;
+	float: left;
+}
+#main #anli h3, #main #zhaopin h3, #main #gongyi h3 {
+	color: #0068b7;
+	line-height: 40px
+}
+#main #anli ul, #main #zhaopin ul, #main #gongyi ul {
+	list-style-image: url(../images/dot.jpg);
+	margin: 0px auto;
+}
+#main #anli li, #main #zhaopin li, #main #gongyi li {
+	line-height: 20px;
+	width: 220px;
+	margin-right: 0px;
+	margin-left: auto
+}
+.icon1 {
+	background: url(../images/icon1.png) left center no-repeat;
+}
+.icon2 {
+	background: url(../images/icon2.png) left center no-repeat;
+}
+.icon3 {
+	background: url(../images/icon3.png) left center no-repeat;
+}
+
+/*合作伙伴*/
+#main #gundong {
+	padding-bottom: 20px;
+}
+#main #gundong h3 {
+	color: #0068b7;
+	line-height: 40px
+}
+#main #gundong #demo {
+	background: #FFF;
+	overflow: hidden;
+}
+#demo img {
+	border: 1px solid #F2F2F2;
+}
+
+/*网页底部*/
+#footer {
+	height: 150px;
+	background: #4b4b4b;
+	clear: both;
+	padding: 20px;
+	color: #fff
+}
+#footer dl {
+	width: 320px;
+	float: left;
+}
+#footer dl dt {
+	font-size: 14px;
+	font-weight: bold;
+}
+#footer dt, #footer dd {
+	line-height: 20px
+}
+#footer #xian {
+	width: 960px;
+	margin: 0px auto
+}

@@ -1,0 +1,55 @@
+/*全局统一设置*/
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, img, dl, dt, dd, table, th, td, blockquote, fieldset, div, strong, label, em { margin: 0; padding: 0; border: 0; }
+ul, ol, li { list-style-type: none; }
+input, button { margin: 0px; font-size: 12px; vertical-align: middle; }
+body { font-size: 12px; font-family: "微软雅黑",Arial, Helvetica, sans-serif; color: #000; }
+table { border-collapse: collapse; border-spacing: 0; }
+a {color:#000;text-decoration: none}
+
+/*网页头部*/
+#header {width: 960px;height: 70px;margin: 0px auto;}
+
+/*主导航栏*/
+#nav {height: 50px; line-height: 50px;background: #47A3DA}
+#nav ul {width: 960px;margin: 0px auto}
+#nav ul li {float: left;width: 160px;text-align: center;}
+#nav ul li a {display: block;color: #fff;font-size: 18px;font-weight: 500; letter-spacing: 3px}
+#nav ul li a:hover {color:#47A3DA;background: #e6f2fa}
+.active{background: #0068b7}
+
+/*主内容区*/
+#main {width: 960px; margin: 0px auto;padding-top: 10px;}
+
+/*左侧边栏*/
+#aside {width: 220px;float: left;color:#666;min-height: 500px;}
+
+#aside #list h3 {background: #47a3da;font-size: 16px;color:#fff; line-height: 35px;text-align: center;}
+#aside #list ul li {border-bottom:1px #000 dotted;}
+#aside #list ul li a {font-size:14px;display:block;height: 40px;text-align: center;line-height: 40px;color: #666;}
+#aside #list ul li a:hover {background: #47A3DA;color: #fff}
+
+#aside #address {background: #eee;padding: 10px;text-align: center;}
+#aside #address h3 {font-size: 16px; border-bottom: 1px green solid;line-height: 30px;}
+#aside #address ul li {font-size: 14px; height: 30px; line-height: 30px;}
+.icon_tel_top {position: relative;top:2px;margin-right: 5px;}
+.icon_msg_top {position: relative;top:3px;margin-right: 5px;}
+
+/*右侧内容区*/
+#contents {width: 720px; float: right;min-height: 400px;font-size: 14px}
+#contents h4 {font-weight: 300;line-height: 35px;border-bottom: solid #47a3da 3px}
+#contents #sub_banner {padding:5px 0px;}
+#contents #wenzhang {border-top:solid #47a3da 3px;color:#333;}
+#contents h1 {line-height: 60px; text-align: center;}
+#contents p {line-height: 25px; letter-spacing: 1px; padding: 10px 0px}
+
+/*图片展示区*/
+#box {width: 580px; margin:0px auto}
+#box dl {width: 250px; margin: 20px; float: left}
+#box dd {width: 230px;background: #ccc;color: #444;text-align: center;height: 30px;line-height: 30px;margin: 0px auto;border-bottom: 3px orange solid}
+
+/*网页底部*/
+#footer {height: 150px;background: #4b4b4b;color: #fff;padding: 20px;}
+#footer #xian {width: 960px; margin: 0px auto}
+#footer dl {float: left;width: 320px;}
+#footer dl dt {line-height: 20px; font-weight: bold;font-size: 14px}
+#footer dl dd {line-height: 20px;}
